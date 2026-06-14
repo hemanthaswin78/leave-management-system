@@ -36,7 +36,7 @@ export default function Dashboard() {
 
   const fetchLeaves = async (token) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/leaves", {
+      const res = await axios.get("https://leave-management-backend-rmgs.onrender.com/api/leaves", {
         headers: { Authorization: token || localStorage.getItem("token") }
       });
       setLeaves(res.data);
@@ -57,11 +57,11 @@ export default function Dashboard() {
     setLoading(true);
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/leaves/${editId}`, form, { headers: getHeaders() });
+        await axios.put(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${editId}`, form, { headers: getHeaders() });
         addToast("success", "Leave Updated!", "Your request has been updated.");
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/api/leaves", form, { headers: getHeaders() });
+        await axios.post("https://leave-management-backend-rmgs.onrender.com/api/leaves", form, { headers: getHeaders() });
         addToast("success", "Leave Submitted!", "Your request is pending approval.");
       }
       setForm({ leaveType: "", startDate: "", endDate: "", reason: "" });
@@ -88,7 +88,7 @@ export default function Dashboard() {
   const handleDelete = async (id) => {
     if (!confirm("Cancel this leave request?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/leaves/${id}`, { headers: getHeaders() });
+      await axios.delete(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`, { headers: getHeaders() });
       addToast("info", "Request Cancelled", "Your leave request was removed.");
       fetchLeaves();
     } catch {

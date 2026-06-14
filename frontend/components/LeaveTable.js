@@ -14,7 +14,7 @@ export default function LeaveTable() {
       localStorage.getItem("token");
 
     const res = await axios.get(
-      "http://localhost:5000/api/leaves",
+      "https://leave-management-backend-rmgs.onrender.com/api/leaves",
       {
         headers: {
           Authorization: token
@@ -30,7 +30,7 @@ export default function LeaveTable() {
       localStorage.getItem("token");
 
     await axios.delete(
-      `http://localhost:5000/api/leaves/${id}`,
+      `https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`,
       {
         headers: {
           Authorization: token
