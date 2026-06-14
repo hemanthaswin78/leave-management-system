@@ -16,7 +16,7 @@ export default function Login() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("https://leave-management-backend-rmgs.onrender.com/api/auth/login", form);
+      const res = await axios.post("https://leave-management-backend-nmqs.onrender.com/api/auth/login", form);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
       localStorage.setItem("username", res.data.username);

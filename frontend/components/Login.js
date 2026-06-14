@@ -13,7 +13,7 @@ export default function Login() {
 
   const login = async () => {
     const res = await axios.post(
-      "https://leave-management-backend-rmgs.onrender.com/api/auth/login",
+      "https://leave-management-backend-nmqs.onrender.com/api/auth/login",
       {
         username,
         password

@@ -22,27 +22,27 @@
 
 //   const fetchLeaves = async () => {
 //     try {
-//       const res = await axios.get("https://leave-management-backend-rmgs.onrender.com/api/leaves", { headers: getHeaders() });
+//       const res = await axios.get("https://leave-management-backend-nmqs.onrender.com/api/leaves", { headers: getHeaders() });
 //       setLeaves(res.data);
 //     } catch { router.push("/"); }
 //   };
 
 //   const handleStatus = async (id, status) => {
 //     setLoading(true);
-//     await axios.put(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`, { status }, { headers: getHeaders() });
+//     await axios.put(`https://leave-management-backend-nmqs.onrender.com/api/leaves/${id}`, { status }, { headers: getHeaders() });
 //     fetchLeaves();
 //     setLoading(false);
 //   };
 
 //   const handleDelete = async (id) => {
 //   if (!confirm("Delete this leave request permanently?")) return;
-//   await axios.delete(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`, { headers: getHeaders() });
+//   await axios.delete(`https://leave-management-backend-nmqs.onrender.com/api/leaves/${id}`, { headers: getHeaders() });
 //   fetchLeaves();
 // };
 
 // const handleClearAll = async () => {
 //   if (!confirm("Delete ALL leave data? This cannot be undone.")) return;
-//   await axios.delete("https://leave-management-backend-rmgs.onrender.com/api/leaves/clear-all", { headers: getHeaders() });
+//   await axios.delete("https://leave-management-backend-nmqs.onrender.com/api/leaves/clear-all", { headers: getHeaders() });
 //   fetchLeaves();
 // };
 
@@ -247,7 +247,7 @@ export default function Admin() {
 
   const fetchLeaves = async () => {
     try {
-      const res = await axios.get("https://leave-management-backend-rmgs.onrender.com/api/leaves", { headers: getHeaders() });
+      const res = await axios.get("https://leave-management-backend-nmqs.onrender.com/api/leaves", { headers: getHeaders() });
       setLeaves(res.data);
     } catch { router.push("/"); }
   };
@@ -255,7 +255,7 @@ export default function Admin() {
   const handleStatus = async (id, status) => {
     setLoading(true);
     try {
-      await axios.put(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`, { status }, { headers: getHeaders() });
+      await axios.put(`https://leave-management-backend-nmqs.onrender.com/api/leaves/${id}`, { status }, { headers: getHeaders() });
       await fetchLeaves();
       if (status === "Approved") {
         addToast("success", "Leave Approved", "Employee has been notified.");
@@ -272,7 +272,7 @@ export default function Admin() {
   const handleDelete = async (id) => {
     if (!confirm("Delete this leave request permanently?")) return;
     try {
-      await axios.delete(`https://leave-management-backend-rmgs.onrender.com/api/leaves/${id}`, { headers: getHeaders() });
+      await axios.delete(`https://leave-management-backend-nmqs.onrender.com/api/leaves/${id}`, { headers: getHeaders() });
       await fetchLeaves();
       addToast("info", "Request Deleted", "Leave request has been removed.");
     } catch {
@@ -283,7 +283,7 @@ export default function Admin() {
   const handleClearAll = async () => {
     if (!confirm("Delete ALL leave data? This cannot be undone.")) return;
     try {
-      await axios.delete("https://leave-management-backend-rmgs.onrender.com/api/leaves/clear-all", { headers: getHeaders() });
+      await axios.delete("https://leave-management-backend-nmqs.onrender.com/api/leaves/clear-all", { headers: getHeaders() });
       await fetchLeaves();
       addToast("warning", "All Data Cleared", "All leave records have been deleted.");
     } catch {

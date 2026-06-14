@@ -14,7 +14,7 @@ export default function LeaveForm() {
       localStorage.getItem("token");
 
     await axios.post(
-      "https://leave-management-backend-rmgs.onrender.com/api/leaves",
+      "https://leave-management-backend-nmqs.onrender.com/api/leaves",
       form,
       {
         headers: {
